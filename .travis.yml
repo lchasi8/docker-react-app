@@ -6,12 +6,12 @@ before-install:
 script:
     - docker run -e CI=true lchasi/docker-react-app npm run test
 deploy:
-    - provider: elasticbeanstalk
-    - region: "eu-west-2"
-    - app: "docker-react-app"
-    - env: "DockerReactApp-env"
-    - bucket-name: "elasticbeanstalk-eu-west-2-061273568028"
-    - bucket-path: "docker-react-app"
+    provider: elasticbeanstalk
+    region: "eu-west-2"
+    app: "docker-react-app"
+    env: "DockerReactApp-env"
+    bucket-name: "elasticbeanstalk-eu-west-2-061273568028"
+    bucket-path: "docker-react-app"
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
